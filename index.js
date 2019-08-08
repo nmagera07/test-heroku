@@ -5,7 +5,10 @@
 
 const server = require('./api/server');
 
-const port = 8004
+
+// heroku adds a PORT variable to the environment automatically
+// every environment variable in node will be in the process.env object
+const port = process.env.PORT || 8004
 server.listen(port, () => {
     console.log(`API running on ${port}`)
 })
